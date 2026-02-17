@@ -1,0 +1,10 @@
+/* 
+ * styles/animations/
+ * 
+ * This is the ONLY directory where custom CSS (non-Tailwind) is permitted.
+ * Place all keyframe animations and custom transitions here.
+ * Import individual files from globals.css as needed.
+ *
+ * Example:
+ * @import "../../styles/animations/fade-in.css";
+ */
