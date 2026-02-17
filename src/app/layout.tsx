@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { createSchemaGraph, organizationSchema, webSiteSchema } from "../lib/seo/schemas";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -62,6 +63,14 @@ export default function RootLayout({
                 },
               ],
             }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              createSchemaGraph(organizationSchema(), webSiteSchema())
+            ),
           }}
         />
       </head>

@@ -1,0 +1,12 @@
+# Augos
+> Market-leading energy intelligence platform for South Africa.
+
+## About
+Augos provides energy intelligence solutions for the South African market,
+helping organisations manage, monitor, and optimise their energy consumption.
+
+## Pages
+- /: Home — Overview of Augos energy intelligence platform
+
+## Contact
+- Website: https://augos.co.za
