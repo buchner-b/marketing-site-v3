@@ -3,6 +3,11 @@
 # agent workspace config
 .agent/
 
+# test artifacts
+/test-results/
+/playwright-report/
+/.lighthouseci/
+
 # dependencies
 /node_modules
 /.pnp

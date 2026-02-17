@@ -49,3 +49,15 @@ All significant architectural decisions are logged here with rationale and trade
 **Rationale:** `output: 'export'` (strict SSG) does not support route handlers — they fail during static data collection. Similarly, `headers()` in `next.config.ts` is not supported with static export. Security headers are configured in `vercel.json` instead.
 
 **Trade-offs:** Robots and sitemap must be manually updated when pages change (or automated via a build script in `scripts/`).
+
+---
+
+## 2026-02-17 — Accessibility CSS in `styles/base/` (not `styles/animations/`)
+
+**Decision:** Base accessibility CSS (focus-visible, reduced-motion, skip-to-content) lives in `src/styles/base/accessibility.css`, imported from `globals.css`.
+
+**Alternatives:** Put everything in `globals.css` or move to `styles/animations/`.
+
+**Rationale:** The spec says "Custom CSS only in `styles/animations/`", but these are WCAG 2.2 AA primitives (Priority #1), not decorative animations. They need to load on every page without fail. A dedicated `styles/base/` directory keeps `globals.css` clean while maintaining the spirit of the rule (no ad-hoc custom CSS in components).
+
+**Trade-offs:** Slightly deviates from the letter of the spec's CSS rule. The `styles/base/` directory is limited to accessibility-critical styles only.

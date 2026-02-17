@@ -6,8 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "type-check": "tsc --noEmit"
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "test:a11y": "playwright test e2e/accessibility.spec.ts",
+    "lighthouse": "lhci autorun",
+    "validate": "npm run type-check && npm run lint && npm run build"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -15,14 +19,18 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4",
+    "@lhci/cli": "^0",
+    "@playwright/test": "^1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "clsx": "^2",
-    "tailwind-merge": "^3",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "serve": "^14",
+    "tailwind-merge": "^3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
